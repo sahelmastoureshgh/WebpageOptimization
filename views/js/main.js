@@ -452,7 +452,7 @@ var resizePizzas = function(size) {
   function changePizzaSizes(size) {
  	//save in varaible so it wont be query every time in loop
  	var randomPizzaCont = document.querySelectorAll(".randomPizzaContainer");
- 	for (var i = 0; i < randomPizzaCont.length; i++) {
+ 	for (var i = 0, arrayLen = randomPizzaCont.length; i < arrayLen; i++) {
  		var dx = determineDx(randomPizzaCont[i], size);
  		var newwidth = (randomPizzaCont[i].offsetWidth + dx) + 'px';
  		randomPizzaCont[i].style.width = newwidth;
@@ -507,7 +507,7 @@ function updatePositions() {
   //As google Timeline suggest, cached document.body.scrollTop to a variable
   var items = document.querySelectorAll('.mover');
   var scrollTopTemp=document.body.scrollTop;
-  for (var i = 0; i < items.length; i++) {
+  for (var i = 0, arrayLen = items.length; i < arrayLen; i++)  {
     var phase = Math.sin((scrollTopTemp / 1250) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
