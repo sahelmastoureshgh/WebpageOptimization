@@ -452,8 +452,9 @@ var resizePizzas = function(size) {
   function changePizzaSizes(size) {
  	//save in varaible so it wont be query every time in loop
  	var randomPizzaCont = document.querySelectorAll(".randomPizzaContainer");
+	var dx = determineDx(randomPizzaCont, size);
+	 
  	for (var i = 0, arrayLen = randomPizzaCont.length; i < arrayLen; i++) {
- 		var dx = determineDx(randomPizzaCont[i], size);
  		var newwidth = (randomPizzaCont[i].offsetWidth + dx) + 'px';
  		randomPizzaCont[i].style.width = newwidth;
  	}
@@ -531,12 +532,12 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   var movingPizza1=document.querySelector("#movingPizzas1");
-  var elem = document.createElement('img');
-  elem.className = 'mover';
-  elem.src = "images/pizza.png";
-  elem.style.height = "100px";
-  elem.style.width = "73.333px";
   for (var i = 0; i < 200; i++) {
+    var elem = document.createElement('img');
+    elem.className = 'mover';
+    elem.src = "images/pizza.png";
+    elem.style.height = "100px";
+    elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     movingPizza1.appendChild(elem);
