@@ -452,10 +452,11 @@ var resizePizzas = function(size) {
   function changePizzaSizes(size) {
  	//save in varaible so it wont be query every time in loop
  	var randomPizzaCont = document.querySelectorAll(".randomPizzaContainer");
-	var dx = determineDx(randomPizzaCont, size);
+	//will have the same dx
+	var dx = determineDx(randomPizzaCont[1], size);
+	var newwidth = (randomPizzaCont[1].offsetWidth + dx) + 'px';
 	 
  	for (var i = 0, arrayLen = randomPizzaCont.length; i < arrayLen; i++) {
- 		var newwidth = (randomPizzaCont[i].offsetWidth + dx) + 'px';
  		randomPizzaCont[i].style.width = newwidth;
  	}
  }
