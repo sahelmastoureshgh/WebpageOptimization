@@ -15,7 +15,6 @@ https://tinypng.com/
 Compress css and using media query
 
 I compressed css file by using TextMate compress format I moved style.css in index.html, project-2048.html, project-mobile.html and project-pref.html as following
-
 <script>
    var cb = function() {
        var l = document.createElement('link'); l.rel = 'stylesheet';
